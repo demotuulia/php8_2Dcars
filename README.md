@@ -61,5 +61,5 @@ Below a class diagram of a car. (The map has a similar structure
 
 Tests 
 ======================================================================================
-This project has been done with Test Driven Development with Phpuniy.
+This project has been done with Test Driven Development with Phpunit.
 All tests are found on the in tests folder.
