@@ -1,6 +1,6 @@
 <?php
 /**
- * Configuration file
+ * Configuration file  test
  * 
  * @author Tuulia <tuulia@tuulia.nl>
  * 
