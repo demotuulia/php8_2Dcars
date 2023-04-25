@@ -1,0 +1,23 @@
+#
+  # start this by :  docker-compose up -d
+#
+
+
+version: '23.0'
+services:
+  web:
+    container_name: 2d-cars
+    build: .
+    # define apache port to localhost:2223
+    ports:
+    - "2223:80"
+
+
+    # define here the folder wher you have cloned https://github.com/cptuulia/tuulia.git (with name tuulia)
+    volumes:
+      - /Users/tuuliaantonius/gitrepos/2Dcars-1/code/:/home/code
+
+  
+
+
+
