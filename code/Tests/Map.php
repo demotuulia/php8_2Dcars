@@ -2,12 +2,11 @@
 /**
  * A class to test the map
  *
- *
  * @author Tuulia <tuulia@tuulia.nl>
  */
 //namespace Tests;
 
-require_once(__DIR__ . '/Test.php');
+require_once __DIR__ . '/Test.php';
 
 use Lib\Factor\Base\Map as MapFactor;
 use Lib\Models\CarPosition;
@@ -16,7 +15,6 @@ class Map extends Test
 {
     /**
      * Test initialize
-     *
      */
     public function testInitialize()
     {
@@ -37,7 +35,6 @@ class Map extends Test
     
     /**
      * Test move
-     *
      */
     public function testMove()
     {

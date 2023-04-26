@@ -2,19 +2,17 @@
 /**
  * A class to test car positions
  *
- *
  * @author Tuulia <tuulia@tuulia.nl>
  */
 //namespace Tests;
 
-require_once(__DIR__ . '/Test.php');
+require_once __DIR__ . '/Test.php';
 use Lib\Models\CarPosition;
 
 class CarPositon extends Test
 {
     /**
      * Test initialize
-     *
      */
     public function testInitialize()
     {
@@ -36,7 +34,6 @@ class CarPositon extends Test
     
     /**
      * Test turn
-     *
      */
     public function testTurn()
     {

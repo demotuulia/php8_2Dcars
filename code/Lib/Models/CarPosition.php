@@ -10,10 +10,10 @@ namespace Lib\Models;
 class CarPosition
 {
      /**
-     * x-position
-     *
-     * @var integeger
-     */
+      * x-position
+      *
+      * @var integeger
+      */
     private $x;
     
     
@@ -43,10 +43,9 @@ class CarPosition
     /**
      * Constructor
      *
-     * @param string $x    initial X position,
-     * @param string $y    initial Y position,
-     * @param string $dir  initial direction
-     *
+     * @param string $x   initial X position,
+     * @param string $y   initial Y position,
+     * @param string $dir initial direction
      */
     public function __construct($x, $y, $dir)
     {
@@ -68,10 +67,10 @@ class CarPosition
     
     
      /**
-     * Get Y position
-     *
-     * @return integer
-     */
+      * Get Y position
+      *
+      * @return integer
+      */
     public function getY()
     {
         return $this->y;
@@ -79,10 +78,10 @@ class CarPosition
     
     
      /**
-     * Get direction
-     *
-     * @return string
-     */
+      * Get direction
+      *
+      * @return string
+      */
     public function getDir()
     {
         return $this->dir;
@@ -90,10 +89,10 @@ class CarPosition
     
     
      /**
-     * Set X position
-     *
-     * @param integer
-     */
+      * Set X position
+      *
+      * @param integer
+      */
     public function setX($x)
     {
         $this->x = $x;
@@ -101,10 +100,10 @@ class CarPosition
     
         
      /**
-     * Set Y position
-     *
-     * @param integer
-     */
+      * Set Y position
+      *
+      * @param integer
+      */
     public function setY($y)
     {
         $this->y = $y;
@@ -113,10 +112,10 @@ class CarPosition
     
         
      /**
-     * Set direction
-     *
-     * @param string
-     */
+      * Set direction
+      *
+      * @param string
+      */
     public function setDir($dir)
     {
         $this->dir = $dir;

@@ -11,7 +11,7 @@ interface Map
     /**
      * MapInterface constructor
      *
-     * @param array $params     $northCorner, $eastCorner of the map
+     * @param array $params $northCorner, $eastCorner of the map
      */
     public function __construct($params);
      
@@ -19,7 +19,7 @@ interface Map
      /**
       * Move forward
       *
-      * @param float $distance
+      * @param float    $distance
       * @param stdClass $pos
       */
     public function moveForward($distance, &$pos);

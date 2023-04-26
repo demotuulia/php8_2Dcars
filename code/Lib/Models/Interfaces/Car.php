@@ -11,7 +11,7 @@ interface Car
     /**
      * CarInterface constructor
      *
-     * @param array $params     $northCorner, $eastCorner of the car
+     * @param array $params $northCorner, $eastCorner of the car
      */
     public function __construct($params);
      

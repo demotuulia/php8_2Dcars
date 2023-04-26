@@ -12,7 +12,6 @@ use Lib\Models\CarPosition as CarPosition;
 
 /**
  * A class for the business rules of the car
- *
  */
 
 
@@ -22,15 +21,16 @@ abstract class Car implements CarInterface
     
     /**
      * Car position
+     *
      * @var Lib\Models\CarPosition
      */
     private $carPosition;
 
         /**
-     * Direction of the car
-     *
-     * @var Lib\Models\Map
-     */
+         * Direction of the car
+         *
+         * @var Lib\Models\Map
+         */
     private $map;
     
     
@@ -40,11 +40,10 @@ abstract class Car implements CarInterface
     /**
      * Constructor
      *
-     * @param array $params     x    (string) initial X position,
-     *                          y    (string) initial Y position,
-     *                          dir  (string) initial direction
-     *                          map  (Lib\Models\Map) used map
-     *
+     * @param array $params x    (string) initial X position,
+     *                      y    (string) initial Y position,
+     *                      dir  (string) initial direction
+     *                      map  (Lib\Models\Map) used map
      */
     public function __construct($params)
     {
@@ -85,10 +84,10 @@ abstract class Car implements CarInterface
     
     
      /**
-     * Do one move
-     *
-     * @param string $move
-     */
+      * Do one move
+      *
+      * @param string $move
+      */
     abstract public function doMove($move);
     
     /**
@@ -101,7 +100,7 @@ abstract class Car implements CarInterface
     /**
      * Check is move is valid
      *
-     * @param string $move
+     * @param  string $move
      * @return boolean
      */
     protected function isValidMove($move)

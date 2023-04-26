@@ -2,7 +2,6 @@
 /**
  * Router class
  *
- *
  * @author Tuulia <tuulia@tuulia.nl>
  */
 
@@ -10,7 +9,6 @@ namespace Lib\Core;
 
 /**
  * A class to handle the router
- *
  */
 class Router
 {

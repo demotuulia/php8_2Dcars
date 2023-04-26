@@ -2,21 +2,22 @@
 /**
  * A class to test the car
  *
- *
  * @author Tuulia <tuulia@tuulia.nl>
  */
 
 
-require_once(__DIR__ . '/Test.php');
+require_once __DIR__ . '/Test.php';
 use Lib\Factor\Base\Map as MapFactor;
 use Lib\Factor\Base\Car as CarFactor;
 use Lib\Models\CarPosition;
 
+/**
+ * Class Map
+ */
 class Map extends Test
 {
     /**
      * Test initialize
-     *
      */
     public function testInitialize()
     {
@@ -44,9 +45,8 @@ class Map extends Test
     
     
       /**
-     * Test initialize
-     *
-     */
+       * Test initialize
+       */
     public function testMoves()
     {
       

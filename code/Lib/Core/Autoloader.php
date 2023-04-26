@@ -2,7 +2,6 @@
 /**
  * A class to test the car
  *
- *
  * @author Tuulia <tuulia@tuulia.nl>
  */
 namespace Lib\Core;
@@ -13,7 +12,7 @@ class Autoloader
     /**
      * loader
      *
-     * @param $className
+     * @param  $className
      * @return bool
      */
     public static function loader($className)
@@ -23,7 +22,7 @@ class Autoloader
         $filename = __DIR__ . '/../../' . $filename;
 
         if (file_exists($filename)) {
-            include($filename);
+            include $filename;
               
             if (class_exists($className)) {
                 return true;

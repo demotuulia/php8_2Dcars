@@ -3,7 +3,6 @@
  * This is  a model for a standard car. Later there can be other type cars,
  * like electric car.
  *
- *
  * @author Tuulia <tuulia@tuulia.nl>
  */
 namespace Lib\Models\Car;
@@ -15,7 +14,7 @@ class Standard extends Car
     /**
      * Constructor
      *
-     * @param array $params     $x, $y, $dir  of the car
+     * @param array $params $x, $y, $dir  of the car
      */
     public function __construct($params)
     {
@@ -24,8 +23,8 @@ class Standard extends Car
     
     
      /**
-     * Set valid moves and the functions to call
-     */
+      * Set valid moves and the functions to call
+      */
     protected function setValidMoves()
     {
         $this->validMoves = [
@@ -56,7 +55,7 @@ class Standard extends Car
      /**
       * Do one move
       *
-      * @param string $move
+      * @param  string $move
       * @throws Exception
       */
     public function doMove($move)
@@ -103,11 +102,11 @@ class Standard extends Car
     
 
         /**
-     * Check is move is valid
-     *
-     * @param string $move
-     * @return boolean
-     */
+         * Check is move is valid
+         *
+         * @param  string $move
+         * @return boolean
+         */
     protected function isValidMove($move)
     {
         return parent::isValidMove($move);

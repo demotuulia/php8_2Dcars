@@ -6,7 +6,6 @@ use Lib\Factor\Base\Car as CarFactor;
 
 /**
  * Controller for the the script assessment.php
- *
  */
 
 
@@ -25,7 +24,7 @@ class AssessmentController extends \Lib\Controllers\ConsoleController
      *
      * Example: php Assessment.php 20 20 0 0 N 12 9 E FFFFFRFFRFLFF FFRFRFLFFLFFR
      *
-     * @param array $argv   Parameters to map
+     * @param  array $argv Parameters to map
      * @return array
      */
     protected function mapArguments($argv)
@@ -51,7 +50,6 @@ class AssessmentController extends \Lib\Controllers\ConsoleController
     
     /**
      * Action function of each console controller
-     *
      */
     public function executeAction()
     {

@@ -31,7 +31,7 @@ abstract class Map implements MapInterface
     /**
      * Constructor
      *
-     * @param array $params     $northCorner, $eastCorner of the map
+     * @param array $params $northCorner, $eastCorner of the map
      */
     public function __construct($params)
     {
@@ -54,10 +54,10 @@ abstract class Map implements MapInterface
     }
     
       /**
-      * Move forward
-      *
-      * @param float $distance
-      * @param stdClass $pos
-      */
+       * Move forward
+       *
+       * @param float    $distance
+       * @param stdClass $pos
+       */
     abstract public function moveForward($distance, &$pos);
 }
