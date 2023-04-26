@@ -66,8 +66,8 @@ RUN sed -ri -e 's!/var/www/html!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/sites-av
 RUN sed -ri -e 's!/var/www/!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/apache2.conf /etc/apache2/conf-available/*.conf
 
 
-RUN a2enmod rewrite
-RUN mv /etc/apache2/mods-available/rewrite.load /etc/apache2/mods-enabled/rewrite.load
+#RUN a2enmod rewrite
+#RUN mv /etc/apache2/mods-available/rewrite.load /etc/apache2/mods-enabled/rewrite.load
 
 # allow .htacces override
 #This is quick and dirtt= way because  we replace all "AllowOverride None" in /etc/apache2/apache2.conf
@@ -78,6 +78,17 @@ EXPOSE 80 443
 WORKDIR /home/code
 
 #RUN rm index.html
+
+
+#install composer
+#https://linuxhint.com/install-and-use-php-composer-ubuntu-22-04/
+RUN apt update
+RUN apt install php-cli unzip
+RUN rm -f /etc/ssl/certs/ca-bundle.crt
+RUN apt reinstall ca-certificates
+RUN update-ca-certificates
+RUN curl -sS https://getcomposer.org/installer -o /tmp/composer-setup.php
+RUN php /tmp/composer-setup.php --install-dir=/usr/local/bin --filename=composer
 
 CMD ["apache2ctl", "-D", "FOREGROUND"]
 
