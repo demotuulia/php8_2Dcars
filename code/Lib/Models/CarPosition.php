@@ -9,42 +9,42 @@ namespace Lib\Models;
 
 class CarPosition
 {
-     /**
-      * x-position
-      *
-      * @var integeger
-      */
+    /**
+     * x-position
+     *
+     * @var integeger
+     */
     private $x;
-    
-    
+
+
     /**
      * y-position
      *
      * @var integeger
      */
     private $y;
-    
-   
+
+
     /**
      * Direction of the car
      *
      * @var string
      */
     private $dir;
-    
+
 
     /**
      * Directions
      *
      * @var array
      */
-    private $directions = ['N', 'E' , 'S', 'W'];
+    private $directions = ['N', 'E', 'S', 'W'];
 
     /**
      * Constructor
      *
-     * @param string $x   initial X position,
-     * @param string $y   initial Y position,
+     * @param string $x initial X position,
+     * @param string $y initial Y position,
      * @param string $dir initial direction
      */
     public function __construct($x, $y, $dir)
@@ -53,8 +53,8 @@ class CarPosition
         $this->y = $y;
         $this->dir = $dir;
     }
-    
-    
+
+
     /**
      * Get X position
      *
@@ -64,64 +64,63 @@ class CarPosition
     {
         return $this->x;
     }
-    
-    
-     /**
-      * Get Y position
-      *
-      * @return integer
-      */
+
+
+    /**
+     * Get Y position
+     *
+     * @return integer
+     */
     public function getY()
     {
         return $this->y;
     }
-    
-    
-     /**
-      * Get direction
-      *
-      * @return string
-      */
+
+
+    /**
+     * Get direction
+     *
+     * @return string
+     */
     public function getDir()
     {
         return $this->dir;
     }
-    
-    
-     /**
-      * Set X position
-      *
-      * @param integer
-      */
+
+
+    /**
+     * Set X position
+     *
+     * @param integer
+     */
     public function setX($x)
     {
         $this->x = $x;
     }
-    
-        
-     /**
-      * Set Y position
-      *
-      * @param integer
-      */
+
+
+    /**
+     * Set Y position
+     *
+     * @param integer
+     */
     public function setY($y)
     {
         $this->y = $y;
     }
-    
-    
-        
-     /**
-      * Set direction
-      *
-      * @param string
-      */
+
+
+    /**
+     * Set direction
+     *
+     * @param string
+     */
     public function setDir($dir)
     {
         $this->dir = $dir;
     }
-    
-    
+
+
     /**
      *
      * @param type $dir
@@ -130,16 +129,16 @@ class CarPosition
     {
         $index = array_search($this->dir, $this->directions);
         $index = $dir == 'R' ? $index + 1 : $index - 1;
-        
+
         // case we have turned to left in north
         if ($index < 0) {
             $index = count($this->directions) - 1;
         }
-        
+
         if ($index > count($this->directions) - 1) {
             $index = 0;
         }
-        
+
         $newDir = $this->directions[$index];
         $this->setDir($newDir);
     }

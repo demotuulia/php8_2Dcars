@@ -15,11 +15,11 @@ class Router
     public static function getRouting()
     {
         return (self::isCli())
-        ? self::getRoutingForConsoleScript()
-        : self::getRoutingForWebPage();
+            ? self::getRoutingForConsoleScript()
+            : self::getRoutingForWebPage();
     }
 
-    
+
     /**
      * Check if the current request is from a console script
      *
@@ -39,7 +39,7 @@ class Router
         );
     }
 
-    
+
     /**
      * Get routing for a console script
      *
@@ -61,7 +61,7 @@ class Router
         ];
     }
 
-    
+
     /**
      * Get routing for a web page
      */

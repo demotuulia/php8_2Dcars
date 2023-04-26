@@ -4,13 +4,14 @@
  *
  * @author Tuulia <tuulia@tuulia.nl>
  */
+
 namespace Lib\Models\Map;
 
 use Lib\Models\Map;
 
 class Standard extends Map
 {
-    
+
     /**
      * Constructor
      *
@@ -20,32 +21,32 @@ class Standard extends Map
     {
         parent::__construct($params);
     }
-    
-    
-      /**
-       * Move forward
-       *
-       * @param float    $distance
-       * @param stdClass $pos
-       */
+
+
+    /**
+     * Move forward
+     *
+     * @param float $distance
+     * @param stdClass $pos
+     */
     public function moveForward($distance, &$pos)
     {
         switch ($pos->getDir()) {
-        case 'N':
-            $pos->setY($pos->getY() + $distance);
-            break;
-            
-        case 'S':
-            $pos->setY($pos->getY() - $distance);
-            break;
-            
-        case 'E':
-            $pos->setX($pos->getX() + $distance);
-            break;
-            
-        case 'W':
-            $pos->setX($pos->getX() - $distance);
-            break;
+            case 'N':
+                $pos->setY($pos->getY() + $distance);
+                break;
+
+            case 'S':
+                $pos->setY($pos->getY() - $distance);
+                break;
+
+            case 'E':
+                $pos->setX($pos->getX() + $distance);
+                break;
+
+            case 'W':
+                $pos->setX($pos->getX() - $distance);
+                break;
         }
     }
 }

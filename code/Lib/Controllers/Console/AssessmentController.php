@@ -1,4 +1,5 @@
 <?php
+
 namespace Lib\Controllers\Console;
 
 use Lib\Factor\Base\Map as MapFactor;
@@ -7,8 +8,6 @@ use Lib\Factor\Base\Car as CarFactor;
 /**
  * Controller for the the script assessment.php
  */
-
-
 class AssessmentController extends \Lib\Controllers\ConsoleController
 {
 
@@ -24,19 +23,19 @@ class AssessmentController extends \Lib\Controllers\ConsoleController
      *
      * Example: php Assessment.php 20 20 0 0 N 12 9 E FFFFFRFFRFLFF FFRFRFLFFLFFR
      *
-     * @param  array $argv Parameters to map
+     * @param array $argv Parameters to map
      * @return array
      */
     protected function mapArguments($argv)
     {
         $retArr = [
-            'mapCorner' => (object) ['north' => $argv[1], 'east' => $argv[2]],
-            'startPosCar1' => (object) [
+            'mapCorner' => (object)['north' => $argv[1], 'east' => $argv[2]],
+            'startPosCar1' => (object)[
                 'x' => $argv[3],
                 'y' => $argv[4],
                 'dir' => $argv[5]
             ],
-            'startPosCar2' => (object) [
+            'startPosCar2' => (object)[
                 'x' => $argv[6],
                 'y' => $argv[7],
                 'dir' => $argv[8]
@@ -47,7 +46,7 @@ class AssessmentController extends \Lib\Controllers\ConsoleController
         return $retArr;
     }
 
-    
+
     /**
      * Action function of each console controller
      */
@@ -58,37 +57,37 @@ class AssessmentController extends \Lib\Controllers\ConsoleController
             'eastCorner' => $this->arguments->mapCorner->east,
         ];
         $map = MapFactor::build('Standard', $constructorParams);
-        
-        
+
+
         $constructorParams = [
             'x' => $this->arguments->startPosCar1->x,
             'y' => $this->arguments->startPosCar1->y,
             'dir' => $this->arguments->startPosCar1->dir,
             'map' => $map
         ];
-         
+
         $car1 = CarFactor::build('Standard', $constructorParams);
         $car1->doMoves($this->arguments->moveInstructionsCar1);
         $pos = $car1->getPos();
-        echo ("\n Car1  " . 
-            $pos->getX() . ',' .  
-            $pos->getY() . ',' . 
+        echo("\n Car1  " .
+            $pos->getX() . ',' .
+            $pos->getY() . ',' .
             $pos->getDir()
         );
-        
+
         $constructorParams = [
             'x' => $this->arguments->startPosCar2->x,
             'y' => $this->arguments->startPosCar2->y,
             'dir' => $this->arguments->startPosCar2->dir,
             'map' => $map
         ];
-         
+
         $car1 = CarFactor::build('Standard', $constructorParams);
         $car1->doMoves($this->arguments->moveInstructionsCar1);
         $pos = $car1->getPos();
-        echo ("\n Car2  " . 
-            $pos->getX() . ',' .  
-            $pos->getY() . ',' . 
+        echo("\n Car2  " .
+            $pos->getX() . ',' .
+            $pos->getY() . ',' .
             $pos->getDir() .
             "\n"
         );

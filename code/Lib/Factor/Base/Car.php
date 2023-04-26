@@ -4,6 +4,7 @@
  *
  * @author Tuulia <tuulia@tuulia.nl>
  */
+
 namespace Lib\Factor\Base;
 
 use Lib\Factor\Base as BaseFactor;
@@ -16,7 +17,7 @@ class Car extends BaseFactor
     /**
      * build
      *
-     * @param  string $type
+     * @param string $type
      * @return \Lib\Models\Car
      */
     public static function build($type, $params)

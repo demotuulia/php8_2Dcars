@@ -1,5 +1,5 @@
 #
-  # start this by :  docker-compose up -d
+# start this by :  docker-compose up -d
 #
 
 
@@ -10,7 +10,7 @@ services:
     build: .
     # define apache port to localhost:2223
     ports:
-    - "2223:80"
+      - "2223:80"
 
 
     # define here the folder wher you have cloned https://github.com/cptuulia/tuulia.git (with name tuulia)

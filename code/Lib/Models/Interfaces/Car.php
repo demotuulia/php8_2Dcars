@@ -4,6 +4,7 @@
  *
  * @author Tuulia <tuulia@tuulia.nl>
  */
+
 namespace Lib\Models\Interfaces;
 
 interface Car
@@ -14,16 +15,16 @@ interface Car
      * @param array $params $northCorner, $eastCorner of the car
      */
     public function __construct($params);
-     
-    
-     /**
-      * Do a serie of moves
-      *
-      * @param string $moves
-      */
+
+
+    /**
+     * Do a serie of moves
+     *
+     * @param string $moves
+     */
     public function doMoves($moves);
-    
-    
+
+
     /**
      * Do one move
      *

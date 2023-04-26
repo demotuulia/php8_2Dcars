@@ -18,16 +18,16 @@ abstract class Map implements MapInterface
      * @var integeger
      */
     private $northCorner;
-    
-    
+
+
     /**
      * East corner of the map
      *
      * @var integeger
      */
     private $eastCorner;
-    
-    
+
+
     /**
      * Constructor
      *
@@ -38,8 +38,8 @@ abstract class Map implements MapInterface
         $this->northCorner = $params['northCorner'];
         $this->eastCorner = $params['eastCorner'];
     }
-    
-    
+
+
     /**
      * Get the dimensions of the map
      *
@@ -52,12 +52,12 @@ abstract class Map implements MapInterface
             'east' => $this->eastCorner
         ];
     }
-    
-      /**
-       * Move forward
-       *
-       * @param float    $distance
-       * @param stdClass $pos
-       */
+
+    /**
+     * Move forward
+     *
+     * @param float $distance
+     * @param stdClass $pos
+     */
     abstract public function moveForward($distance, &$pos);
 }

@@ -5,6 +5,7 @@
  *
  * @author Tuulia <tuulia@tuulia.nl>
  */
+
 namespace Lib\Models\Car;
 
 use Lib\Models\Car;
@@ -20,68 +21,68 @@ class Standard extends Car
     {
         parent::__construct($params);
     }
-    
-    
-     /**
-      * Set valid moves and the functions to call
-      */
+
+
+    /**
+     * Set valid moves and the functions to call
+     */
     protected function setValidMoves()
     {
         $this->validMoves = [
-           'F' => 'forward',
-           'R' => 'turnRight',
-           'L' => 'turnLeft'
+            'F' => 'forward',
+            'R' => 'turnRight',
+            'L' => 'turnLeft'
         ];
     }
 
-    
-     /**
-      * Do a serie of moves
-      *
-      * @param string $moves
-      */
+
+    /**
+     * Do a serie of moves
+     *
+     * @param string $moves
+     */
     public function doMoves($moves)
     {
         if (!$moves) {
             return;
         }
-        
+
         foreach (str_split($moves) as $move) {
             $this->doMove($move);
         }
     }
-    
-    
-     /**
-      * Do one move
-      *
-      * @param  string $move
-      * @throws Exception
-      */
+
+
+    /**
+     * Do one move
+     *
+     * @param string $move
+     * @throws Exception
+     */
     public function doMove($move)
     {
         if (!$this->isValidMove($move)) {
             throw new \Exception("Illegal move.");
         }
-        
+
         $function = $this->getMoveFunction($move);
         $this->$function();
         //$position = $this->getPos();
         //echo ("\n $move : " . $position->getX() . ' , ' . $position->getY() . ' , ' . $position->getDir() );
     }
-    
-    
+
+
     /**
      * Move car forward
      */
     private function forward()
     {
         $position = $this->getPos();
-        
+
         $this->getMap()->moveForward(1, $position);
     }
-    
-    
+
+
     /**
      * Turn right
      */
@@ -89,8 +90,8 @@ class Standard extends Car
     {
         $this->getPos()->turn('R');
     }
-    
-    
+
+
     /**
      * Turn left
      */
@@ -98,15 +99,14 @@ class Standard extends Car
     {
         $this->getPos()->turn('L');
     }
-    
-    
 
-        /**
-         * Check is move is valid
-         *
-         * @param  string $move
-         * @return boolean
-         */
+
+    /**
+     * Check is move is valid
+     *
+     * @param string $move
+     * @return boolean
+     */
     protected function isValidMove($move)
     {
         return parent::isValidMove($move);

@@ -1,12 +1,12 @@
 <?php
 /**
  * Configuration file
- * 
+ *
  * @author Tuulia <tuulia@tuulia.nl>
- * 
- * 
- * 
-*/
+ *
+ *
+ *
+ */
 
 
 /**

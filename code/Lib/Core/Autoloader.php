@@ -4,6 +4,7 @@
  *
  * @author Tuulia <tuulia@tuulia.nl>
  */
+
 namespace Lib\Core;
 
 class Autoloader
@@ -17,13 +18,13 @@ class Autoloader
      */
     public static function loader($className)
     {
-     
+
         $filename = str_replace('\\', '/', $className) . ".php";
         $filename = __DIR__ . '/../../' . $filename;
 
         if (file_exists($filename)) {
             include $filename;
-              
+
             if (class_exists($className)) {
                 return true;
             }
