@@ -14,21 +14,13 @@ interface Car
      *
      * @param array $params $northCorner, $eastCorner of the car
      */
-    public function __construct($params);
+    public function __construct(array $params);
 
 
     /**
-     * Do a serie of moves
-     *
-     * @param string $moves
+     * Do a series of moves
      */
-    public function doMoves($moves);
+    public function doMoves(string $moves);
 
-
-    /**
-     * Do one move
-     *
-     * @param string $move
-     */
-    public function doMove($move);
+    public function doMove(string $move);
 }

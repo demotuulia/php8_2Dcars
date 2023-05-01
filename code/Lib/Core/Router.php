@@ -12,6 +12,8 @@ namespace Lib\Core;
  */
 class Router
 {
+    private static string $CONSOLE_CONTROLLER_PATH = '\Lib\Controllers\Console\\';
+
     public static function getRouting()
     {
         return (self::isCli())
@@ -43,15 +45,15 @@ class Router
     /**
      * Get routing for a console script
      *
-     * @return array
+     * @return array<string>
      */
-    private static function getRoutingForConsoleScript()
+    private static function getRoutingForConsoleScript(): array
     {
         $cliScrptNameFull = $_SERVER['SCRIPT_NAME'];
         $cliScrptNameParts = explode('/', $cliScrptNameFull);
         $cliScrptName = end($cliScrptNameParts);
         $cliScrptName = ucfirst(preg_replace('/\.php$/', '', $cliScrptName));
-        $controller = CONSOLE_CONTROLLER_PATH . $cliScrptName . 'Controller';
+        $controller = self::$CONSOLE_CONTROLLER_PATH . $cliScrptName . 'Controller';
 
         $action = 'executeAction';
 

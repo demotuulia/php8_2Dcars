@@ -9,15 +9,12 @@
 namespace Lib\Models\Car;
 
 use Lib\Models\Car;
+use Lib\Models\Interfaces\Car as CarInterface;
 
-class Standard extends Car
+class Standard extends Car implements CarInterface
 {
-    /**
-     * Constructor
-     *
-     * @param array $params $x, $y, $dir  of the car
-     */
-    public function __construct($params)
+
+    public function __construct(array $params)
     {
         parent::__construct($params);
     }
@@ -36,12 +33,7 @@ class Standard extends Car
     }
 
 
-    /**
-     * Do a serie of moves
-     *
-     * @param string $moves
-     */
-    public function doMoves($moves)
+    public function doMoves(string $moves)
     {
         if (!$moves) {
             return;
@@ -54,12 +46,9 @@ class Standard extends Car
 
 
     /**
-     * Do one move
-     *
-     * @param string $move
-     * @throws Exception
+     * @throws \Exception
      */
-    public function doMove($move)
+    public function doMove(string $move)
     {
         if (!$this->isValidMove($move)) {
             throw new \Exception("Illegal move.");
@@ -72,9 +61,6 @@ class Standard extends Car
     }
 
 
-    /**
-     * Move car forward
-     */
     private function forward()
     {
         $position = $this->getPos();
@@ -83,31 +69,20 @@ class Standard extends Car
     }
 
 
-    /**
-     * Turn right
-     */
     private function turnRight()
     {
         $this->getPos()->turn('R');
     }
 
 
-    /**
-     * Turn left
-     */
     private function turnLeft()
     {
         $this->getPos()->turn('L');
     }
 
 
-    /**
-     * Check is move is valid
-     *
-     * @param string $move
-     * @return boolean
-     */
-    protected function isValidMove($move)
+
+    protected function isValidMove(string $move): bool
     {
         return parent::isValidMove($move);
     }

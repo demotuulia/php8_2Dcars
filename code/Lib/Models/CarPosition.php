@@ -9,123 +9,58 @@ namespace Lib\Models;
 
 class CarPosition
 {
-    /**
-     * x-position
-     *
-     * @var integeger
-     */
-    private $x;
+
+    private int $x;
+
+    private int $y;
+
+    private string $dir;
+
+    private array $directions = ['N', 'E', 'S', 'W'];
 
 
-    /**
-     * y-position
-     *
-     * @var integeger
-     */
-    private $y;
-
-
-    /**
-     * Direction of the car
-     *
-     * @var string
-     */
-    private $dir;
-
-
-    /**
-     * Directions
-     *
-     * @var array
-     */
-    private $directions = ['N', 'E', 'S', 'W'];
-
-    /**
-     * Constructor
-     *
-     * @param string $x initial X position,
-     * @param string $y initial Y position,
-     * @param string $dir initial direction
-     */
-    public function __construct($x, $y, $dir)
+    public function __construct(string $initialX, string $initialY, string $dir)
     {
-        $this->x = $x;
-        $this->y = $y;
+        $this->x = $initialX;
+        $this->y = $initialY;
         $this->dir = $dir;
     }
 
 
-    /**
-     * Get X position
-     *
-     * @return integer
-     */
-    public function getX()
+    public function getX(): int
     {
         return $this->x;
     }
 
 
-    /**
-     * Get Y position
-     *
-     * @return integer
-     */
-    public function getY()
+    public function getY(): int
     {
         return $this->y;
     }
 
-
-    /**
-     * Get direction
-     *
-     * @return string
-     */
-    public function getDir()
+    public function getDir(): string
     {
         return $this->dir;
     }
 
-
-    /**
-     * Set X position
-     *
-     * @param integer
-     */
-    public function setX($x)
+    public function setX(int $x)
     {
         $this->x = $x;
     }
 
-
-    /**
-     * Set Y position
-     *
-     * @param integer
-     */
-    public function setY($y)
+    public function setY(int $y)
     {
         $this->y = $y;
     }
 
 
-    /**
-     * Set direction
-     *
-     * @param string
-     */
-    public function setDir($dir)
+    public function setDir(string $dir)
     {
         $this->dir = $dir;
     }
 
 
-    /**
-     *
-     * @param type $dir
-     */
-    public function turn($dir)
+    public function turn(string $dir)
     {
         $index = array_search($this->dir, $this->directions);
         $index = $dir == 'R' ? $index + 1 : $index - 1;

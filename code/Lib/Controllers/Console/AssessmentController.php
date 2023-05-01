@@ -4,9 +4,9 @@ namespace Lib\Controllers\Console;
 
 use Lib\Factor\Base\Map as MapFactor;
 use Lib\Factor\Base\Car as CarFactor;
-
+use Lib\Models\Car;
 /**
- * Controller for the the script assessment.php
+ * Controller for the script assessment.php
  */
 class AssessmentController extends \Lib\Controllers\ConsoleController
 {
@@ -23,10 +23,9 @@ class AssessmentController extends \Lib\Controllers\ConsoleController
      *
      * Example: php Assessment.php 20 20 0 0 N 12 9 E FFFFFRFFRFLFF FFRFRFLFFLFFR
      *
-     * @param array $argv Parameters to map
-     * @return array
+     * $argv Parameters to map from console command
      */
-    protected function mapArguments($argv)
+    protected function mapArguments(array $argv): array
     {
         $retArr = [
             'mapCorner' => (object)['north' => $argv[1], 'east' => $argv[2]],
@@ -52,22 +51,29 @@ class AssessmentController extends \Lib\Controllers\ConsoleController
      */
     public function executeAction()
     {
+        /** @var  \stdClass $arguments */
+        $arguments = $this->arguments;
+        /** @var \stdClass $mapCorner */
+        $mapCorner = $arguments->mapCorner;
         $constructorParams = [
-            'northCorner' => $this->arguments->mapCorner->north,
-            'eastCorner' => $this->arguments->mapCorner->east,
+            'northCorner' => $mapCorner->north,
+            'eastCorner' => $mapCorner->mapCorner->east,
         ];
         $map = MapFactor::build('Standard', $constructorParams);
 
+        /** @var  \stdClass $startPosCar1 */
+        $startPosCar1 = $arguments->startPosCar1;
 
         $constructorParams = [
-            'x' => $this->arguments->startPosCar1->x,
-            'y' => $this->arguments->startPosCar1->y,
-            'dir' => $this->arguments->startPosCar1->dir,
+            'x' => $startPosCar1->x,
+            'y' => $startPosCar1->y,
+            'dir' => $startPosCar1->dir,
             'map' => $map
         ];
 
+        /** @var Car $car1 */
         $car1 = CarFactor::build('Standard', $constructorParams);
-        $car1->doMoves($this->arguments->moveInstructionsCar1);
+        $car1->doMoves($arguments->moveInstructionsCar1);
         $pos = $car1->getPos();
         echo("\n Car1  " .
             $pos->getX() . ',' .
@@ -76,14 +82,14 @@ class AssessmentController extends \Lib\Controllers\ConsoleController
         );
 
         $constructorParams = [
-            'x' => $this->arguments->startPosCar2->x,
-            'y' => $this->arguments->startPosCar2->y,
-            'dir' => $this->arguments->startPosCar2->dir,
+            'x' => $arguments->startPosCar2->x,
+            'y' => $arguments->startPosCar2->y,
+            'dir' => $arguments->startPosCar2->dir,
             'map' => $map
         ];
 
         $car1 = CarFactor::build('Standard', $constructorParams);
-        $car1->doMoves($this->arguments->moveInstructionsCar1);
+        $car1->doMoves($arguments->moveInstructionsCar1);
         $pos = $car1->getPos();
         echo("\n Car2  " .
             $pos->getX() . ',' .

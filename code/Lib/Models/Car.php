@@ -9,27 +9,16 @@ namespace Lib\Models;
 
 use Lib\Models\Interfaces\Car as CarInterface;
 use Lib\Models\CarPosition as CarPosition;
-
+use Lib\Models\Map;
 /**
  * A class for the business rules of the car
  */
-abstract class Car implements CarInterface
+    abstract class Car implements CarInterface
 {
 
-    /**
-     * Car position
-     *
-     * @var Lib\Models\CarPosition
-     */
-    private $carPosition;
+    private CarPosition $carPosition;
 
-    /**
-     * Direction of the car
-     *
-     * @var Lib\Models\Map
-     */
-    private $map;
-
+    private Map $map;
 
     protected $validMoves = [];
 
@@ -37,12 +26,12 @@ abstract class Car implements CarInterface
     /**
      * Constructor
      *
-     * @param array $params x    (string) initial X position,
+     *   $params x    (string) initial X position,
      *                      y    (string) initial Y position,
      *                      dir  (string) initial direction
      *                      map  (Lib\Models\Map) used map
      */
-    public function __construct($params)
+    public function __construct(array $params)
     {
         $this->carPosition = new CarPosition(
             $params['x'],
@@ -55,12 +44,7 @@ abstract class Car implements CarInterface
     }
 
 
-    /**
-     * Get map
-     *
-     * @return Lib\Models\Map
-     */
-    public function getMap()
+    public function getMap(): Map
     {
         return $this->map;
     }
@@ -75,17 +59,10 @@ abstract class Car implements CarInterface
     /**
      * Do a serie of moves
      *
-     * @param string $moves
      */
-    abstract public function doMoves($moves);
+    abstract public function doMoves(string $moves);
 
-
-    /**
-     * Do one move
-     *
-     * @param string $move
-     */
-    abstract public function doMove($move);
+    abstract public function doMove(string $move);
 
     /**
      * Set valid moves
@@ -93,13 +70,8 @@ abstract class Car implements CarInterface
     abstract protected function setValidMoves();
 
 
-    /**
-     * Check is move is valid
-     *
-     * @param string $move
-     * @return boolean
-     */
-    protected function isValidMove($move)
+
+    protected function isValidMove(string $move) : bool
     {
         return isset($this->validMoves[$move]);
     }

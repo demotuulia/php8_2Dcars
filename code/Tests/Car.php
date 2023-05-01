@@ -10,7 +10,7 @@ require_once __DIR__ . '/Test.php';
 
 use Lib\Factor\Base\Map as MapFactor;
 use Lib\Factor\Base\Car as CarFactor;
-use Lib\Models\CarPosition;
+use Lib\Models\Map\Standard;
 
 /**
  * Class Map
@@ -20,7 +20,7 @@ class Map extends Test
     /**
      * Test initialize
      */
-    public function testInitialize()
+    public function testInitialize(): void
     {
         $map = $this->getMap();
 
@@ -48,7 +48,7 @@ class Map extends Test
     /**
      * Test initialize
      */
-    public function testMoves()
+    public function testMoves(): void
     {
 
         $cases = [
@@ -100,10 +100,8 @@ class Map extends Test
 
     /**
      * Get map
-     *
-     * @return Lib\Models\Map\Standard
      */
-    private function getMap()
+    private function getMap(): Standard
     {
         $northCorner = 456;
         $eastCorner = 235;

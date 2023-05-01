@@ -10,6 +10,7 @@ require_once __DIR__ . '/Test.php';
 
 use Lib\Factor\Base\Map as MapFactor;
 use Lib\Models\CarPosition;
+use Lib\Models\Map as MapModel;
 
 class Map extends Test
 {
@@ -25,6 +26,7 @@ class Map extends Test
             'northCorner' => $northCorner,
             'eastCorner' => $eastCorner,
         ];
+        /** @var MapModel $map */
         $map = MapFactor::build('Standard', $constructorParams);
 
         $dimensions = $map->getMapDimensions();

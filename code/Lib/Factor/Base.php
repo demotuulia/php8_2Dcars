@@ -7,19 +7,20 @@
 
 namespace Lib\Factor;
 
+use Lib\Models\Interfaces\Car as CarInterface;
+use Lib\Models\Interfaces\Map as MapInterface;
+
 abstract class Base
 {
     /**
-     * Build
      *
-     * @param sting $classGroup Folder of this factory type
-     * @param string $type Type class
-     * @param array $constructorParams Parameters in the constructor
-     * @return \Lib\Models\
+     * $classGroup Folder of this factory type
+     * $type Type class
+     * $constructorParams Parameters in the constructor
      *
-     * @throws Exception
+     * @throws \Exception
      */
-    public static function buildBase($classGroup, $type, $constructorParams)
+    public static function buildBase(string $classGroup, string $type, array$constructorParams)// : MapInterface
     {
         $class = 'Lib\Models\\' . $classGroup . '\\' . $type;
 

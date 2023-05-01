@@ -7,21 +7,14 @@
 
 namespace Lib\Models\Interfaces;
 
+use Lib\Models\CarPosition;
+
 interface Map
 {
     /**
-     * MapInterface constructor
-     *
-     * @param array $params $northCorner, $eastCorner of the map
+     * $params $northCorner, $eastCorner of the map
      */
-    public function __construct($params);
+    public function __construct(array $params);
 
-
-    /**
-     * Move forward
-     *
-     * @param float $distance
-     * @param stdClass $pos
-     */
-    public function moveForward($distance, &$pos);
+    public function moveForward(float $distance,  CarPosition &$pos);
 }

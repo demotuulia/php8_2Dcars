@@ -9,43 +9,27 @@
 namespace Lib\Models;
 
 use Lib\Models\Interfaces\Map as MapInterface;
+use Lib\Models\CarPosition;
 
 abstract class Map implements MapInterface
 {
-    /**
-     * North corner of the map
-     *
-     * @var integeger
-     */
-    private $northCorner;
+
+    private int $northCorner;
+
+    private int $eastCorner;
 
 
     /**
-     * East corner of the map
-     *
-     * @var integeger
+     * @inheritdoc
      */
-    private $eastCorner;
-
-
-    /**
-     * Constructor
-     *
-     * @param array $params $northCorner, $eastCorner of the map
-     */
-    public function __construct($params)
+    public function __construct(array $params)
     {
         $this->northCorner = $params['northCorner'];
         $this->eastCorner = $params['eastCorner'];
     }
 
 
-    /**
-     * Get the dimensions of the map
-     *
-     * @return stdClass
-     */
-    public function getMapDimensions()
+    public function getMapDimensions(): \stdClass
     {
         return (object)[
             'north' => $this->northCorner,
@@ -56,8 +40,7 @@ abstract class Map implements MapInterface
     /**
      * Move forward
      *
-     * @param float $distance
-     * @param stdClass $pos
+     * @inheritdoc
      */
-    abstract public function moveForward($distance, &$pos);
+    abstract public function moveForward(float $distance, CarPosition &$pos);
 }

@@ -8,17 +8,12 @@ namespace Lib\Controllers;
 abstract class ConsoleController
 {
 
-    /**
-     * Request parameters
-     *
-     * @var stdObject
-     */
-    protected $arguments;
+    protected \stdClass $arguments;
 
     /**
      * Constructor
      */
-    public function __construct()
+    public function __construct(): void
     {
         $this->readArguments();
     }
@@ -26,7 +21,7 @@ abstract class ConsoleController
     /**
      * Read request to $this->arguments
      */
-    private function readArguments()
+    private function readArguments(): void
     {
         global $argv;
 
@@ -34,14 +29,7 @@ abstract class ConsoleController
         $this->mapArguments($argv);
     }
 
-
-    /**
-     * Function to map the console arguments
-     *
-     * @param array $argv Parameters to map
-     * @return array
-     */
-    abstract protected function mapArguments($argv);
+    abstract protected function mapArguments(array $argv): array;
 
 
     /**

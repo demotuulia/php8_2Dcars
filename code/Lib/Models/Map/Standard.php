@@ -7,29 +7,23 @@
 
 namespace Lib\Models\Map;
 
+use Lib\Models\Interfaces\Map as MapInterface;
 use Lib\Models\Map;
+use Lib\Models\CarPosition;
 
-class Standard extends Map
+class Standard extends Map implements MapInterface
 {
 
-    /**
-     * Constructor
-     *
-     * @param array $params $northCorner, $eastCorner of the map
-     */
-    public function __construct($params)
+    public function __construct(array $params)
     {
         parent::__construct($params);
     }
 
 
     /**
-     * Move forward
-     *
-     * @param float $distance
-     * @param stdClass $pos
+     * @inheritdoc
      */
-    public function moveForward($distance, &$pos)
+    public function moveForward(float $distance, CarPosition &$pos)
     {
         switch ($pos->getDir()) {
             case 'N':

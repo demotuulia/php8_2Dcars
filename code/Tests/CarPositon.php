@@ -15,7 +15,7 @@ class CarPositon extends Test
     /**
      * Test initialize
      */
-    public function testInitialize()
+    public function testInitialize(): void
     {
         $expectedXpos = 23;
         $expectedYpos = 56;
@@ -36,7 +36,7 @@ class CarPositon extends Test
     /**
      * Test turn
      */
-    public function testTurn()
+    public function testTurn(): void
     {
         $cases = [
 

@@ -8,20 +8,18 @@
 namespace Lib\Factor\Base;
 
 use Lib\Factor\Base as BaseFactor;
+use Lib\Models\Interfaces\Map as MapInterface;
 
-/**
- * Map factor
- */
+
 class Map extends BaseFactor
 {
     /**
      * build
      *
-     * @param string $type Type class
-     * @param array $constructorParams Parameters in the constructor
-     * @return \Lib\Models\
+     * $type Type class
+     * $constructorParams Parameters in the constructor
      */
-    public static function build($type, $constructorParams)
+    public static function build(string $type,array $constructorParams): MapInterface
     {
         return parent::buildBase('Map', $type, $constructorParams);
     }
