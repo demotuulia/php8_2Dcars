@@ -1,6 +1,6 @@
 # 2Dcars
 
-This is an example, which I have done with my own frame work with standard PHP7 and PSR-2 coding standards.
+This is an example, which I have done with my own frame work with standard PHP8 and Phpstan and Codesniffer standards.
 
 
 
