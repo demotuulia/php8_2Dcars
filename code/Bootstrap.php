@@ -5,7 +5,7 @@
  * @author Tuulia <tuulia@tuulia.nl>
  */
 
-require_once __DIR__ . '/Lib/Core/Autoloader.php';
+require_once __DIR__ . '/../vendor/autoload.php';
 require_once __DIR__ . '/Config.php';
 
 use Lib\Core\Router as Router;
