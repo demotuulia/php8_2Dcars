@@ -34,7 +34,7 @@ Code
 
 Structure
 ----------
-I have build this to my MVC framework of my own with standard PHP. To get results for a postion of car I the run a
+I have build this to my MVC framework of my own with standard PHP. To get results for a position of car I the run a
 console script with arguments. If you look at my file structure I follow more or less the standard MVC structure.
 (In our case, there are no views, but there is controller for the console commando)
 
@@ -54,3 +54,8 @@ Below a class diagram of a car. (The map has a similar structure
 Tests
 ======================================================================================
 This project has been done with Test Driven Development with Phpunit. All tests are found on the in tests folder.
+
+Framework
+=======================================================================================
+
+I have used Docker and Composer as open source tools.
