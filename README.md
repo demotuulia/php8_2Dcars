@@ -49,7 +49,13 @@ these need 2 different maps, because you are allowed to drive on different rows.
 Below a class diagram of a car. (The map has a similar structure
 ![alt text](https://github.com/demotuulia/2Dcars/blob/master/UML.jpeg)
 
-
+Most important folders
+Docker: docker files
+code: php code
+ code/Console
+ code/Lib/Controllers
+ code/Lib/Models
+ code/Tests
 
 Tests
 ======================================================================================
