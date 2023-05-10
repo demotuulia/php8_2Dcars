@@ -49,6 +49,11 @@ these need 2 different maps, because you are allowed to drive on different rows.
 Below a class diagram of a car. (The map has a similar structure
 ![alt text](https://github.com/demotuulia/2Dcars/blob/master/UML.jpeg)
 
+Folders:
+The most important folders to look at  are below:
+. docker
+. code/Lib
+. code/Tests
 
 
 Tests
@@ -59,3 +64,5 @@ Framework
 =======================================================================================
 
 I have used Docker and Composer as open source tools.
+
+
